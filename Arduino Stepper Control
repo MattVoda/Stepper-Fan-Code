@@ -1,0 +1,51 @@
+//Matthew Voda
+//May 2014
+//UVA Architecture
+
+//pulse+ connected to 5V pin in power group of Arduino
+
+//int counter = 0;
+
+#include<AccelStepper.h>
+
+int dir = 7;  //pin 7 controls direction
+int pulse = 12;  //12 controls pulsing
+
+AccelStepper stepper(1, pulse, dir);
+
+void setup()
+{
+  stepper.setMaxSpeed(1800);   //set a max speed
+  stepper.setSpeed(0);         //run to stop
+  //stepper.setSpeed(10);    //run to move
+
+
+          //breaks at 1800!
+        
+          
+  //stepper.setAcceleration(300);
+  //stepper.moveTo(target);
+}
+
+//1400 looks goody =)
+//1500 worked, prob better
+//1600 broke -- or 1800?
+
+
+void loop()
+{ 
+  stepper.runSpeed();
+ 
+
+//  counter++;
+  
+//  if (counter==500) {
+//    stepper.setSpeed(1000);
+//  }
+//  if (counter==1000) {
+//    stepper.setSpeed(1500);
+//  }
+//
+//  sysout.println(counter);
+  
+}
